@@ -3,11 +3,12 @@
 <head>
   <meta charset='utf-8'>
 
-  <title>eliotsykes/monitorstxt @ GitHub</title>
+  <title>monitors.txt - lazy webapp monitoring</title>
 
   <style type="text/css">
     body {
       margin-top: 1.0em;
+      margin-bottom: 100px;
       background-color: #ffffff;
       font-family: Helvetica, Arial, FreeSans, san-serif;
       color: #000000;
@@ -19,39 +20,100 @@
     h1 { font-size: 3.8em; color: #000000; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #000000; }
+    h2 { font-size: 1.5em; color: #000000; margin-top: 100px; }
     h3 { text-align: center; color: #000000; }
     a { color: #000000; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+    .footer { text-align:center; padding-top:100px; font-style: italic; }
   </style>
 </head>
 
 <body>
-  <a href="https://github.com/eliotsykes/monitorstxt"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
   <div id="container">
 
-    <div class="download">
-      <a href="https://github.com/eliotsykes/monitorstxt/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/eliotsykes/monitorstxt/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/eliotsykes/monitorstxt">monitorstxt</a>
-      <span class="small">by <a href="https://github.com/eliotsykes">eliotsykes</a></span></h1>
+    <h1><a href="/">monitors.txt</a>
+      <span class="small">lazy webapp monitoring</span></h1>
 
     <div class="description">
-      Describe monitoring for your web site in plain english at http://yoursite.tld/monitors.txt
+      <strong>TL;DR</strong> Specify your webapp&rsquo;s monitoring in a plain text file that your
+      monitoring provider reads at http://yoursite.tld/monitors.txt to setup your monitors
     </div>
 
-    
-      <p>This is the main project text</p>
-    
+	<h2>What is monitors.txt?</h2>
+	<p>
+		A text file that lives at <a href="#">www.yoursite.tld/monitors.txt</a> and describes in plain text what monitoring you want done on your site.
+	</p>
+  <p>
+    Your monitoring provider regularly reads your monitors.txt file to configure your application's monitors. Due to the open nature of monitors.txt,
+	you'll be able to quickly switch monitor providers or even add new providers without hassle.
+	</p>
+  <h2>Define monitors where they belong</h2>
+	<p>
+	One intention of monitors.txt is to encourage developers to improve monitoring for their web sites by making it easy to setup new monitors;
+	I don't enjoy logging into some monitoring service web app to setup monitors, but I do enjoy writing readable monitoring tests right there in my code,
+  where they belong.
+	</p>
+	
+	<h2>What if I want to keep my monitor configuration private?</h2>
+	<p>
+    Two ways spring to mind:
+  </p>
+  <ol>
+		<li>Restrict access to the file so only your monitoring provider can read it<br /><br /></li>
+    <li>For the more gung-ho, obfuscate the URL and use SSL (e.g. <a href="#">https://yoursite.tld/something-unguessable/monitors.txt</a>) and tell your provider where to find your monitors.txt</li>
+	</ol>
+	
+	<h2>Show me a sample monitors.txt already</h2>
+	<p>
+	A basic monitors.txt file for monitorstxt.org
+	</p>
+
+	<pre>
+# monitors.txt - see http://monitorstxt.org for more info
+Scenario: The monitorstxt.com domain should redirect to monitorstxt.org
+  When I visit http://monitorstxt.com
+  Then I should be redirected to http://monitorstxt.org
+
+Scenario: Home page shows a sample monitors.txt file
+  When I visit http://monitorstxt.org
+  Then I should see "Home page shows a sample monitors.txt file" within "body"
+
+Scenario: DNS should resolve monitorstxt.org to the correct IP address
+  When I use DNS to lookup monitorstxt.org
+  Then I should see the IP address 207.97.227.245
+	</pre>
+	<p>
+	And something with a few more bells and whistles :
+	</p>
+	<pre>
+# monitors.txt - A sample monitor for DuckDuckGo
+
+# Feature information is optional
+Feature: DuckDuckGo Search
+  It should continue to kick ass
+  And I should be able to search
+
+  Scenario: Search over SSL
+    Given I go to https://www.duckduckgo/
+    When I fill in "q" with "site:news.ycombinator.com"
+    And I press submit
+    Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.com
+    And I should see "Hacker News" within "h2"
+	</pre>
+	
+	<h2>monitors.txt looks a lot like a Cucumber feature</h2>
+	<p>
+	I want monitors.txt to be flexible and easy to read, hence why I've gone with this format. Alternative formats to Cucumber's Gherkin can be supported if needed.
+	</p>
+	
+	<h2>Feedback appreciated</h2>
+	<p>
+	monitors.txt is a work in progress that I'd love your feedback on. Discuss on <a href="http://news.ycombinator.com/">Hacker News</a> or email eliotsykes -at- gmail
+  or contribute/fork on GitHub <a href="https://github.com/eliotsykes/monitorstxt">eliotsykes/monitorstxt</a>
+	</p>
 
     
 
@@ -60,28 +122,15 @@
     
 
     
-      <h2>Authors</h2>
-      <p>Eliot Sykes</p>
-    
 
     
-      <h2>Contact</h2>
-      <p>Eliot Sykes (eliotsykes@gmail.com)<br/>      </p>
+      <h2>Author</h2>
+      <p>Eliot Sykes (eliotsykes -at- gmail)</p>
     
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/eliotsykes/monitorstxt/zipball/master">zip</a> or
-      <a href="https://github.com/eliotsykes/monitorstxt/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/eliotsykes/monitorstxt</pre>
-    </p>
 
     <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/eliotsykes/monitorstxt">eliotsykes/monitorstxt</a>
+      contribute/fork on GitHub : <a href="https://github.com/eliotsykes/monitorstxt">eliotsykes/monitorstxt</a>
     </div>
 
   </div>

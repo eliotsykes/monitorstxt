@@ -9,4 +9,4 @@ Scenario: The home page should show the sample monitors.txt file
 
 Scenario: DNS should resolve monitorstxt.org to the correct IP address
 	When I use DNS to lookup monitorstxt.org
-	Then I should see the IP address 1.2.3.4
+	Then I should see the IP address 207.97.227.245

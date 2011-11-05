@@ -26,7 +26,7 @@ A basic monitors.txt file for monitorstxt.org :
 
 	Scenario: DNS should resolve monitorstxt.org to the correct IP address
 		When I use DNS to lookup monitorstxt.org
-		Then I should see the IP address 1.2.3.4
+		Then I should see the IP address 207.97.227.245
 		
 And something with a few more bells and whistles :
 
