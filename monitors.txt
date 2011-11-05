@@ -1,4 +1,10 @@
 # monitors.txt - see http://monitorstxt.org for more info
+
+Scenario: Homepage performance
+    When I go to http://monitorstxt.org
+    Then I should see the page downloaded in less than 0.5 seconds
+    And I should see the page assets downloaded in less than 2 seconds
+
 Scenario: The monitorstxt.com domain should redirect to monitorstxt.org
 	When I visit http://monitorstxt.com
 	Then I should be redirected to http://monitorstxt.org
@@ -10,3 +16,4 @@ Scenario: The home page should show the sample monitors.txt file
 Scenario: DNS should resolve monitorstxt.org to the correct IP address
 	When I use DNS to lookup monitorstxt.org
 	Then I should see the IP address 207.97.227.245
+

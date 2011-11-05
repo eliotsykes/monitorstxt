@@ -96,12 +96,18 @@ Feature: DuckDuckGo Search
   It should continue to kick ass
   And I should be able to search
 
+  Scenario: Homepage performance
+    When I go to http://www.duckduckgo
+    Then I should see the page downloaded in less than 0.5 seconds
+    And I should see the page assets downloaded in less than 2 seconds
+
   Scenario: Search over SSL
-    Given I go to https://www.duckduckgo/
+    Given I go to https://www.duckduckgo
     When I fill in "q" with "site:news.ycombinator.com"
     And I press submit
     Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.com
     And I should see "Hacker News" within "h2"
+
 	</pre>
 	
 	<h2>monitors.txt looks a lot like a Cucumber feature</h2>
