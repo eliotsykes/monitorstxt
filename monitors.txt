@@ -1,9 +1,9 @@
 # monitors.txt - see http://monitorstxt.org for more info
 
 Scenario: Homepage performance
-    When I go to http://monitorstxt.org
-    Then I should see the page downloaded in less than 0.5 seconds
-    And I should see the page assets downloaded in less than 2 seconds
+  When I go to http://monitorstxt.org
+  Then I should see the page downloaded in less than 0.5 seconds
+  And I should see the page assets downloaded in less than 2 seconds
 
 Scenario: The monitorstxt.com domain should redirect to monitorstxt.org
 	When I visit http://monitorstxt.com
