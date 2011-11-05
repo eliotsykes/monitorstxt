@@ -41,7 +41,7 @@ And something with a few more bells and whistles :
 	    When I go to https://www.duckduckgo/
 	    And I fill in "q" with "site:news.ycombinator.com"
 	    And I press submit
-		Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.co    
+		Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.com   
 		Then I should see "Hacker News" within "h2"
 
 ## monitors.txt looks a lot like a Cucumber feature
