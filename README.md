@@ -1,1 +1,1 @@
-See http://monitorstxt.org
+See http://monitorstxt.org and http://monitorstxt.org/monitors.txt
