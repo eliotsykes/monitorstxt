@@ -27,10 +27,24 @@ A basic monitors.txt file for monitorstxt.org :
 	Scenario: DNS should resolve monitorstxt.org to the correct IP address
 		When I use DNS to lookup monitorstxt.org
 		Then I should see the IP address 1.2.3.4
+		
+And something with a few more bells and whistles :
 
+	# monitors.txt - A sample monitor for DuckDuckGo
+	
+	# Feature information is optional
+	Feature: DuckDuckGo Search
+	  It should continue to kick ass
+	  And I should be able to search
 
+	  Scenario: Search over SSL
+	    When I go to https://www.duckduckgo/
+	    And I fill in "q" with "site:news.ycombinator.com"
+	    And I press submit
+		Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.co    
+		Then I should see "Hacker News" within "h2"
 
-## That looks a lot like a Cucumber feature
+## monitors.txt looks a lot like a Cucumber feature
 monitors.txt ought to be flexible and easy to read, hence why I've gone with this format. Alternative formats to Cucumber's Gherkin ought to be supported if needed.
 
 ## Feedback wanted
