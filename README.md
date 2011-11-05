@@ -38,11 +38,11 @@ And something with a few more bells and whistles :
 	  And I should be able to search
 
 	  Scenario: Search over SSL
-	    When I go to https://www.duckduckgo/
-	    And I fill in "q" with "site:news.ycombinator.com"
+	    Given I go to https://www.duckduckgo/
+	    When I fill in "q" with "site:news.ycombinator.com"
 	    And I press submit
 		Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.com   
-		Then I should see "Hacker News" within "h2"
+		And I should see "Hacker News" within "h2"
 
 ## monitors.txt looks a lot like a Cucumber feature
 monitors.txt ought to be flexible and easy to read, hence why I've gone with this format. Alternative formats to Cucumber's Gherkin ought to be supported if needed.
