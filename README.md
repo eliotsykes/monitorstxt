@@ -3,7 +3,7 @@
 ## What is monitors.txt?
 A text file that lives at www.yoursite.tld/monitors.txt and describes in plain language what monitoring you want done on your site.
 Your monitoring provider regularly reads your monitors.txt file to configure your application's monitors. Due to the open nature of monitors.txt,
-you'll be able to migrate or even add new monitoring services without hassle and in a short time.
+you'll be able to quickly switch monitor providers or even add new providers without hassle.
 
 One intention of monitors.txt is to encourage developers to improve monitoring for their web sites by making it easy to setup new monitors;
 I don't enjoy logging into some monitoring service web app to setup monitors, but I do enjoy writing readable monitoring tests right there in my code.
