@@ -1,4 +1,6 @@
-See http://monitorstxt.org
+For info on monitors.txt see http://monitorstxt.org
+
+If you want to start using monitors.txt register for the Henchmon Beta http://www.henchmon.com
 
 Sample formats:
 
