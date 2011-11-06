@@ -1,3 +1,28 @@
+# SYNTAX OPTION 1, bit of a deviation from the others but interesting, not sure how to get multi-step interactions working
+monitors:
+  monitorstxt redirects:
+    redirect: http://monitorstxt.com -> http://monitorstxt.org (301)
+
+  home page performance and content:
+    url: http://monitorstxt.org
+    performance: <= 0.5s
+    content:
+      body: *The home page should show the sample monitors.txt file*
+      h1: monitors.txt
+
+  cdn performance:
+    url: http://cdn.monitorstxt.org/logo.png
+    performance: <= 2s
+
+  DNS resolving correctly:
+    dns resolve: monitorstxt.org -> 207.97.227.245
+
+  Login stats:
+    guage: http://domain/stats/logins 60s
+    count: http://domain/stats/logins 60s
+    avg: http://domain/stats/logins 24h
+
+# SYNTAX OPTION 2
 monitors:
   homepage performance:
     visit: http://monitorstxt.org
@@ -10,7 +35,7 @@ monitors:
         download time:
           maximum: 2 seconds
 
-  monitorstxt.com redirect:
+  monitorstxt redirect:
     visit: http://monitorstxt.com
     should redirect to: http://monitorstxt.org
 
@@ -22,7 +47,7 @@ monitors:
           - { body: The homepage should show the sample monitors.txt file }
           - { h1: monitors.txt }
 
-  monitorstxt.org DNS:
+  monitorstxt DNS:
     dns:
       should resolve:
         host: monitorstxt.org
@@ -35,3 +60,4 @@ monitors:
     page:
       should have:
         content: { h2: monitors.txt }
+

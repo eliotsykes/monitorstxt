@@ -28,4 +28,3 @@ Scenario: Site appears in search engine
   When I fill in "q" with "site:monitorstxt.org"
   And I click button "submit"
   Then the page should have content "monitors.txt" within "h2"
-
