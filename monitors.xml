@@ -1,0 +1,75 @@
+<monitors>
+  <monitor name="homepage performance">
+    <visit>http://monitorstxt.org</visit>
+    <page>
+      <shouldHave>
+        <downloadTime>
+          <maximum>
+            <value>0.5</value>
+            <unit>seconds</unit>
+          </maximum>
+        </downloadTime>
+      </shouldHave>
+    </page>
+    <assets>
+      <shouldHave>
+        <downloadTime>
+          <maximum>
+            <value>2</value>
+            <unit>seconds</unit>
+          </maximum>
+        </downloadTime>
+      </shouldHave>
+    </assets>
+  </monitor>
+
+  <monitor name="monitorstxt.com redirect">
+    <visit>http://monitorstxt.com</visit>
+    <shouldRedirectTo>http://monitorstxt.org</shouldRedirectTo>
+  </monitor>
+
+  <monitor name="homepage content">
+    <visit>http://monitorstxt.org</visit>
+    <page>
+      <shouldHave>
+        <content>
+          <value>The homepage should show the sample monitors.txt</value>
+          <locator>body</locator>
+        </content>
+
+        <content>
+          <value>monitors.txt</value>
+          <locator>h1</locator>
+        </content>
+      </shouldHave>
+    </page>
+  </monitor>
+
+  <monitor name="monitorstxt.org DNS">
+    <dns>
+      <shouldResolve>
+        <host>monitorstxt.org</host>
+        <ipAddress>207.97.227.245</ipAddress>
+      </shouldResolve>
+    </dns>
+  </monitor>
+
+  <monitor name="indexed in search engine">
+    <visit>http://www.duckduckgo.com</visit>
+    <fillIn>
+      <locator>q</locator>
+      <with>site:monitorstxt.org</with>
+    </fillIn>
+    <clickButton>
+      <locator>submit</locator>
+    </clickButton>
+    <page>
+      <shouldHave>
+        <content>
+          <value>monitors.txt</value>
+          <locator>h2</locator>
+        </content>
+      </shouldHave>
+    </page>
+  </monitor>
+</monitors>

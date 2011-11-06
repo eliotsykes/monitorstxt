@@ -1,9 +1,15 @@
 # monitors.txt - see http://monitorstxt.org for more info
 
+# This is the Gherkin/Cucumber format, other formats available at:
+# YAML: http://monitorstxt.org/monitors.yml
+# JSON: http://monitorstxt.org/monitors.json
+# XML : http://monitorstxt.org/monitors.xml
+
+# - Gherkin/Cucumber format
 Scenario: Homepage performance
-  When I go to http://monitorstxt.org
-  Then I should see the page downloaded in less than 0.5 seconds
-  And I should see the page assets downloaded in less than 2 seconds
+  When I visit http://monitorstxt.org
+  Then the page should download in 0.5 seconds or less
+  And the assets should download in 2 seconds or less
 
 Scenario: The monitorstxt.com domain should redirect to monitorstxt.org
   When I visit http://monitorstxt.com
@@ -11,8 +17,15 @@ Scenario: The monitorstxt.com domain should redirect to monitorstxt.org
 
 Scenario: The home page should show the sample monitors.txt file
   When I visit http://monitorstxt.org
-  Then I should see "The home page should show the sample monitors.txt file" within "body"
+  Then the page should have content "The home page should show the sample monitors.txt file" within "body"
+  And the page should have content "monitors.txt" within "h1"
 
 Scenario: DNS should resolve monitorstxt.org to the correct IP address
-  When I use DNS to lookup monitorstxt.org
-  Then I should see the IP address 207.97.227.245
+  Then DNS should resolve host "monitorstxt.org" to "207.97.227.245"
+
+Scenario: Site appears in search engine
+  Given I visit http://www.duckduckgo.com
+  When I fill in "q" with "site:monitorstxt.org"
+  And I click button "submit"
+  Then the page should have content "monitors.txt" within "h2"
+

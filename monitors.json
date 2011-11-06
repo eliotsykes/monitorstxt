@@ -1,0 +1,56 @@
+{
+  "monitors": {
+
+    "homepage performance": {
+      "visit": "http://monitorstxt.org",
+      "page": {
+        "should have": {
+          "download time": { "maximum": "0.5 seconds" }
+        }
+      },
+      "assets": {
+        "should have": {
+          "download time": { "maximum": "2 seconds" }
+        }
+      }
+    },
+
+    "monitorstxt.com redirect": {
+      "visit": "http://monitorstxt.com",
+      "should redirect to": "http://monitorstxt.org"
+    },
+
+    "homepage content": {
+      "visit": "http://monitorstxt.org",
+      "page": {
+        "should have": {
+          "content": {
+            "body": "The homepage should show the sample monitors.txt file",
+            "h1": "monitors.txt"
+          }
+        }
+      }
+    },
+
+    "monitorstxt.org DNS": {
+      "dns": {
+        "should resolve": {
+          "host": "monitorstxt.org",
+          "ip address": "207.97.227.245"
+        }
+      }
+    },
+
+    "indexed in search engine": {
+      "visit": "http://www.duckduckgo.com",
+      "fill in": { "q": "site:monitorstxt.org" },
+      "click button": "submit",
+      "page": {
+        "should have": {
+          "content": { "h2": "monitors.txt" }
+        }
+      }
+    }
+    
+  }
+}
