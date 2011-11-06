@@ -128,54 +128,14 @@
   <h2>Show me a sample monitors.txt already</h2>
 
   <p>
-    A basic monitors.txt file for monitorstxt.org
+    Current intention is to support multiple formats for monitors.txt:
   </p>
-
-	<pre>
-# monitors.txt - see http://monitorstxt.org for more info
-Scenario: The monitorstxt.com domain should redirect to monitorstxt.org
-  When I visit http://monitorstxt.com
-  Then I should be redirected to http://monitorstxt.org
-
-Scenario: Home page shows a sample monitors.txt file
-  When I visit http://monitorstxt.org
-  Then I should see "Home page shows a sample monitors.txt file" within "body"
-
-Scenario: DNS should resolve monitorstxt.org to the correct IP address
-  When I use DNS to lookup monitorstxt.org
-  Then I should see the IP address 207.97.227.245
-	</pre>
-  <p>
-    And something with a few more bells and whistles :
-  </p>
-	<pre>
-# monitors.txt - A sample monitor for DuckDuckGo
-
-# Feature information is optional
-Feature: DuckDuckGo Search
-  It should continue to kick ass
-  And I should be able to search
-
-  Scenario: Homepage performance
-    When I go to http://www.duckduckgo.com
-    Then I should see the page downloaded in less than 0.5 seconds
-    And I should see the page assets downloaded in less than 2 seconds
-
-  Scenario: Search over SSL
-    Given I go to https://www.duckduckgo.com
-    When I fill in "q" with "site:news.ycombinator.com"
-    And I press submit
-    Then I should be on https://duckduckgo.com/?q=site%3Anews.ycombinator.com
-    And I should see "Hacker News" within "h2"
-
-	</pre>
-
-  <h2>monitors.txt looks a lot like a Cucumber feature</h2>
-
-  <p>
-    I want monitors.txt to be flexible and easy to read, hence why I've gone with this format. Alternative formats to
-    Cucumber's Gherkin can be supported if needed.
-  </p>
+  <ul>
+    <li>Cucumber/Gherkin <a href="http://monitorstxt.org/monitors.txt">http://monitorstxt.org/monitors.txt</a></li>
+    <li>YAML <a href="http://monitorstxt.org/monitors.yml">http://monitorstxt.org/monitors.yml</a></li>
+    <li>JSON <a href="http://monitorstxt.org/monitors.json">http://monitorstxt.org/monitors.json</a></li>
+    <li>XML <a href="http://monitorstxt.org/monitors.xml">http://monitorstxt.org/monitors.xml</a></li>
+  </ul>
 
   <h2>Feedback appreciated</h2>
 
