@@ -2,7 +2,7 @@ See http://monitorstxt.org
 
 Sample formats:
 
-- Cucumber/Gherkin: http://monitortxt.org/monitors.txt
-- YAML: http://monitortxt.org/monitors.yml
-- JSON: http://monitortxt.org/monitors.json
-- XML: http://monitortxt.org/monitors.xml
+- Cucumber/Gherkin: http://monitorstxt.org/monitors.txt
+- YAML: http://monitorstxt.org/monitors.yml
+- JSON: http://monitorstxt.org/monitors.json
+- XML: http://monitorstxt.org/monitors.xml
