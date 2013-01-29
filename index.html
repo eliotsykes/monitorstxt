@@ -71,11 +71,6 @@
       border-bottom: 1px solid #aaa
     }
 
-    .footer {
-      text-align: center;
-      padding-top: 100px;
-      font-style: italic;
-    }
   </style>
 </head>
 
@@ -86,10 +81,8 @@
     <span class="small">lazy web app monitoring</span></h1>
 
   <div class="description">
-    <strong>TL;DR</strong> Specify your web app&rsquo;s monitoring in a plain text file that your
-    monitoring provider reads at http://yoursite.tld/monitors.txt to setup your monitors.<br /><br />
-    <a href="http://www.henchmon.com" title="Damned easy web app monitoring">Register for the Henchmon Beta</a> to be
-    one of the first to use monitors.txt
+    <strong>TL;DR</strong> An idea to specify your web app&rsquo;s monitoring in a plain text file that any
+    monitoring provider reads at http://yoursite.tld/monitors.txt to setup your monitors.<br />
   </div>
 
   <h2>What is monitors.txt?</h2>
@@ -100,9 +93,9 @@
   </p>
 
   <p>
-    Your monitoring provider regularly reads your monitors.txt file to configure your application's monitors. Due to the
+    Your monitoring provider regularly reads your monitors.txt file to configure your application&rsquo;s monitors. Due to the
     open nature of monitors.txt,
-    you'll be able to quickly switch monitor providers or even add new providers without hassle.
+    you&rsquo;ll be able to quickly switch monitor providers or even add new providers without hassle.
   </p>
 
   <h2>Define monitors where they belong</h2>
@@ -110,7 +103,7 @@
   <p>
     One intention of monitors.txt is to encourage developers to improve monitoring for their web sites by making it easy
     to setup new monitors;
-    I don't enjoy logging into some monitoring service web app to setup monitors, but I do enjoy writing readable
+    I don&rsquo;t enjoy logging into some monitoring service web app to setup monitors, but I do enjoy writing readable
     monitoring tests right there in my code,
     where they belong.
   </p>
@@ -130,7 +123,7 @@
   <h2>Show me a sample monitors.txt already</h2>
 
   <p>
-    Current intention is to support multiple formats for monitors.txt:
+    Perhaps a service could support multiple formats for monitors.txt:
   </p>
   <ul>
     <li>Gherkin/Cucumber <a href="https://github.com/eliotsykes/monitorstxt/blob/gh-pages/monitors.txt">monitors.txt</a></li>
@@ -139,30 +132,21 @@
     <li>XML <a href="https://github.com/eliotsykes/monitorstxt/blob/gh-pages/monitors.xml">monitors.xml</a></li>
   </ul>
 
-  <h2>How can I start using monitors.txt?</h2>
+  <h2>Can I start using monitors.txt?</h2>
+
   <p>
-    I'm developing a monitoring service named <a href="http://www.henchmon.com" title="Damned easy web app monitoring">Henchmon</a> to use monitors.txt.
-    If you want to be part of the Henchmon Beta, <a href="http://www.henchmon.com" title="Henchmon Beta registration">register for an invite</a>.
+    If you build it, yep. Sorry, this monitors.txt article is just an idea I had one weekend that I hastily decided to publish. It got some useful feedback on <a href="http://news.ycombinator.com/item?id=3200341">Hacker News</a> if you would like
+    to read more.
   </p>
 
-  <h2>Feedback appreciated</h2>
-
+  <h2>Update, 29th Jan 2013</h2>
   <p>
-    monitors.txt is a work in progress that I'd love your feedback on. Discuss on <a
-          href="http://news.ycombinator.com/item?id=3200341">Hacker News</a>, email eliotsykes -at- gmail,
-    tweet @<a href="http://twitter.com/eliotsykes">eliotsykes</a>, or contribute/fork on GitHub <a
-          href="https://github.com/eliotsykes/monitorstxt">eliotsykes/monitorstxt</a>
+    I did toy with the idea of providing a service to do this, and produced a prototype that worked with a Cucumber/Gherkin format monitors.txt. However, my monitoring needs and views have evolved since then and I&rsquo;ve stopped work on it.
   </p>
 
   <h2>Author</h2>
 
-  <p>Eliot Sykes (eliotsykes -at- gmail)</p>
-
-
-  <div class="footer">
-    To start using monitors.txt <a href="http://www.henchmon.com" title="Henchmon. Damned easy web app monitoring">register for the Henchmon Beta</a><br />
-    Contribute/fork on GitHub : <a href="https://github.com/eliotsykes/monitorstxt">eliotsykes/monitorstxt</a>
-  </div>
+  <p>Eliot Sykes (e -at- jetbootlabs.com)</p>
 
 </div>
 
